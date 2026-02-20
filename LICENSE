@@ -1,24 +1,40 @@
-This is free and unencumbered software released into the public domain.
+The original repo of this did not set the license policy. I will follow the policy of the aurix code example with this license. (https://github.com/Infineon/AURIX_code_examples/blob/master/code_examples/iLLD_TC375_ADS_FreeRTOS_Basic/OS/FreeRTOS/license.txt)
 
-Anyone is free to copy, modify, publish, use, compile, sell, or
-distribute this software, either in source code form or as a compiled
-binary, for any purpose, commercial or non-commercial, and by any
-means.
 
-In jurisdictions that recognize copyright laws, the author or authors
-of this software dedicate any and all copyright interest in the
-software to the public domain. We make this dedication for the benefit
-of the public at large and to the detriment of our heirs and
-successors. We intend this dedication to be an overt act of
-relinquishment in perpetuity of all present and future rights to this
-software under copyright law.
+-----------
+The FreeRTOS kernel is released under the MIT open source license, the text of
+which is provided below.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.
+This license covers the FreeRTOS kernel source files, which are located in the
+/FreeRTOS/Source directory of the official FreeRTOS kernel download.  It also
+covers most of the source files in the demo application projects, which are
+located in the /FreeRTOS/Demo directory of the official FreeRTOS download.  The
+demo projects may also include third party software that is not part of FreeRTOS
+and is licensed separately to FreeRTOS.  Examples of third party software
+includes header files provided by chip or tools vendors, linker scripts,
+peripheral drivers, etc.  All the software in subdirectories of the /FreeRTOS
+directory is either open source or distributed with permission, and is free for
+use.  For the avoidance of doubt, refer to the comments at the top of each
+source file.
 
-For more information, please refer to <https://unlicense.org>
+
+License text:
+-------------
+
+Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
