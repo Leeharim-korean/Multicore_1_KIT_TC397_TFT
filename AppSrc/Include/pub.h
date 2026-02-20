@@ -40,9 +40,9 @@
 #include "udp.h"
 #include "ip4_addr.h"
 
-//#define CAN_TEST_CPU0//can测试在cpu0进行，可以用debug打印
-#define CAN_TEST_CPU1
-#define ETH_TEST_CPU0
+//#define CAN_TEST_CPU0
+//#define CAN_TEST_CPU1
+//#define ETH_TEST_CPU0
 
 extern SemaphoreHandle_t g_eth_swamphore;
 extern SemaphoreHandle_t g_can0_swamphore;

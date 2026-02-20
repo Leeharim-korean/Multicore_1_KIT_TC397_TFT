@@ -63,6 +63,7 @@ void instruct_delay(int times)
     }
 }
 
+
 BaseType_t ret0 = 0, ret1 = 0, ret2 = 0;
 void core0_main(void)
 {
@@ -86,12 +87,11 @@ void core0_main(void)
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
 
-    g_eth_swamphore = xSemaphoreCreateCounting(10, 0);
-    g_can0_swamphore = xSemaphoreCreateCounting(10, 0);
-    g_can2_swamphore = xSemaphoreCreateCounting(10, 0);
+
 
 #ifdef ETH_TEST_CPU0
-    //xTaskCreate(test_eth_fos, "test_eth_fos", 1024, NULL, 3, NULL);
+    g_eth_swamphore = xSemaphoreCreateCounting(10, 0);
+//    xTaskCreate(test_eth_fos, "test_eth_fos", 1024, NULL, 3, NULL);
     ret0 = xTaskCreate(test_eth_socket_client_fos, "test_eth_socket_client_fos", 1024, NULL, 3, NULL);
     ret1 = xTaskCreate(test_eth_socket_server_fos, "test_eth_socket_server_fos", 1024, NULL, 4, NULL);
     /*eth Must be at the highest level of the running task*/
@@ -101,10 +101,17 @@ void core0_main(void)
 #ifdef CAN_TEST_CPU0
     can_init(0);
     can_init(2);
+    g_can0_swamphore = xSemaphoreCreateCounting(10, 0);
+    g_can2_swamphore = xSemaphoreCreateCounting(10, 0);
     xReturn = xTaskCreate(test_can0_send_cpu0, "test0_cpu0", 512, NULL, 3, NULL);
     xReturn = xTaskCreate(test_can0_recv_cpu0, "test1_cpu0", 512, NULL, 3, NULL);
     xReturn = xTaskCreate(test_can2_send_cpu0, "test2_cpu0", 512, NULL, 3, NULL);
     xReturn = xTaskCreate(test_can2_recv_cpu0, "test3_cpu0", 512, NULL, 3, NULL);
+#endif
+
+#ifdef CAN_TEST_CPU1
+    g_can0_swamphore = xSemaphoreCreateCounting(10, 0);
+    g_can2_swamphore = xSemaphoreCreateCounting(10, 0);
 #endif
 
     vTaskStartScheduler();

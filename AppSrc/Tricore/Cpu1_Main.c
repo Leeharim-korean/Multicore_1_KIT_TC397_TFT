@@ -41,21 +41,20 @@ void core1_main(void)
      * Enable the watchdog and service it periodically if it is required
      */
     IfxScuWdt_disableCpuWatchdog(IfxScuWdt_getCpuWatchdogPassword());
-    can_init(0);
-    can_init(2);
     /* Wait for CPU sync event */
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
 
 
-
     //waitTime(TimeConst_1s * 1);
     instruct_delay(1);
 #ifdef CAN_TEST_CPU1
-    xReturn = xTaskCreate(test_can0_send_cpu1, "test0_cpu0", 512, NULL, 3, NULL);
-    xReturn = xTaskCreate(test_can0_recv_cpu1, "test1_cpu0", 512, NULL, 3, NULL);
-    xReturn = xTaskCreate(test_can2_send_cpu1, "test2_cpu0", 512, NULL, 3, NULL);
-    xReturn = xTaskCreate(test_can2_recv_cpu1, "test3_cpu0", 512, NULL, 3, NULL);
+//    can_init(0);
+//    can_init(2);
+//    xReturn = xTaskCreate(test_can0_send_cpu1, "test0_cpu0", 512, NULL, 3, NULL);
+//    xReturn = xTaskCreate(test_can0_recv_cpu1, "test1_cpu0", 512, NULL, 3, NULL);
+//    xReturn = xTaskCreate(test_can2_send_cpu1, "test2_cpu0", 512, NULL, 3, NULL);
+//    xReturn = xTaskCreate(test_can2_recv_cpu1, "test3_cpu0", 512, NULL, 3, NULL);
 #endif
     while (1)
     {
